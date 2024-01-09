@@ -1,0 +1,89 @@
+<div class="hk-wrapper hk-pg-auth" data-footer="simple">
+  <!-- Main Content -->
+  <div class="hk-pg-wrapper py-0">
+    <div class="hk-pg-body py-0">
+      <!-- Container -->
+      <div class="container-fluid">
+        <!-- Row -->
+        <div class="row auth-split">
+          <div class="col-xl-5 col-lg-6 col-md-7 position-relative mx-auto">
+            <div class="auth-content flex-column pt-8 pb-md-8 pb-13">
+              <div class="text-center mb-7">
+                <a class="navbar-brand me-0" href="/login">
+                  <img class="brand-img d-inline-block" src="assets/dist/img/logo-reduzida-semfundo.png" alt="Portal do Seller">
+                </a>
+              </div>
+              <form class="w-100" [formGroup]="formGroup" (ngSubmit)="login()">
+                <div class="row">
+                  <div class="col-xl-7 col-sm-10 mx-auto">
+                    <div class="text-center mb-4">
+                      <h4>Acesse sua conta!</h4>
+                      <p>Insira seu email e senha para continuar</p>
+                    </div>
+                    <div class="row gx-3">
+                      <div class="form-group col-lg-12">
+                        <div class="form-label-group">
+                          <label>Email</label>
+                        </div>
+                        <input class="form-control" placeholder="Insira aqui seu email" formControlName="email" type="email" [ngClass]="{'is-invalid': invalidAccess}">
+                        <div class="invalid-feedback">{{invalidMessage}}</div>
+                      </div>
+                      <div class="form-group col-lg-12">
+                        <div class="form-label-group">
+                          <label>Senha</label>
+                          <a href="#" class="fs-7 fw-medium">Esqueci minha senha</a>
+                        </div>
+                        <div class="input-group password-check">
+                          <span class="input-affix-wrapper affix-wth-text">
+                            <input class="form-control" placeholder="Insira sua senha" formControlName="password" type="password">
+                            <a href="#" class="input-suffix text-primary text-uppercase fs-8 fw-medium">
+                              <span>Mostrar</span>
+                              <span class="d-none">Esconder</span>
+                            </a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-uppercase btn-block" (click)="login()" [disabled]="!formGroup.valid || loading">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <span *ngIf="!loading">Entrar</span>
+                        <span class="spinner-border spinner-border-sm loading" role="status" aria-hidden="true" *ngIf="loading"></span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Page Footer -->
+            <div class="hk-footer border-0">
+              <footer class="container-xxl footer">
+                <div class="row">
+                  <div class="col-xl-8 text-center">
+                    <p class="footer-text pb-0"><span class="copy-text">Portal do Seller © 2024 Todos os direitos reservados.</span></p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+            <!-- / Page Footer -->
+          </div>
+          <div class="col-xl-7 col-lg-6 col-md-5 col-sm-10 d-md-block d-none position-relative bg-primary-light-5">
+            <div class="auth-content flex-column text-center py-8">
+              <div class="row">
+                <div class="col-xxl-7 col-xl-8 col-lg-11 mx-auto">
+                  <h2 class="mb-4">Saiba tudo sobre o Portal do Seller 2.0</h2>
+                  <p>Um novo gerenciador para gestão da sua loja, pra tudo ficar mais simples!</p>
+                  <button class="btn  btn-flush-primary btn-uppercase mt-2">Fazer um tour</button>
+                </div>
+              </div>
+              <img src="assets/dist/img/macaroni-logged-out.png" class="img-fluid w-sm-50 mt-7" alt="login" />
+            </div>
+          </div>
+        </div>
+        <!-- /Row -->
+      </div>
+      <!-- /Container -->
+    </div>
+    <!-- /Page Body -->
+  </div>
+  <!-- /Main Content -->
+</div>
